@@ -37,8 +37,6 @@
   --p-accent: #0b5f6b; --p-accent-ink: #f6f2eb; --p-action: #0b5f6b; --p-action-ink: #f6f2eb;
   --p-inv-bg: #333231; --p-inv-surface: #3f3e3c; --p-inv-ink: #f6f2eb; --p-inv-muted: #b2afaa;
   --p-inv-accent: #f6f2eb; --p-inv-accent-ink: #333231; --p-inv-action: #f6f2eb; --p-inv-action-ink: #333231;
-  /* one Arabic family carries both scripts, so the Latin brand names (SAP, AWS, Odoo) set in it
-     too and the page stays inside the four-font-file budget */
   --font-display: "IBM Plex Sans Arabic", system-ui, sans-serif;
   --font-text: "IBM Plex Sans Arabic", system-ui, sans-serif;
   --display-weight: 400;
@@ -72,12 +70,6 @@
   .footer .nav__logo .brand-logo { height: 52px; }
   @media (max-width: 639px) { .nav__logo .brand-logo { height: 32px; } }
   .tool-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-6); margin-bottom: var(--s-7); }
-  /* MOBILE RHYTHM — a deliberate deviation from the kit.
-     Under 640 the kit pins every section to a full screen (100lvh). With short sections
-     (the mission statement is 264px of content in an 844px box) that leaves half a screen
-     of dead space and the page reads as gappy. On a phone nobody is judging one-section-
-     per-screen tiles, so sections size to their content and the 96/48 padding carries the
-     rhythm instead. The hero keeps its full screen. */
   @media (max-width: 639px) {
     main > :is(section, .section):not(.hero, .section--hero), footer.closing {
       height: auto; min-height: 0;
@@ -96,19 +88,10 @@
   #partners .partner-logo { display: block; overflow: hidden; background: #fff; border-radius: var(--r-md); height: 76px; padding: 12px 16px; margin: 0; }
   #partners .partner-logo img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
   @media (max-width: 639px) { #partners .partner-logo { height: 64px; } }
-  /* the kit's rows put the value on the right; in RTL the row flips with dir, and the Latin
-     product and tool names inside Arabic sentences need their own direction so they do not
-     reorder around the Arabic punctuation */
   .ltr { direction: ltr; unicode-bidi: isolate; }
 </style>
 </head>
 <body>
-<!-- type: service — the Arabic half of the site, same deal as index.html:
-     hero statement, nav nav-centre, close close-type, footer footer-dark, rhythm dark-band,
-     buttons solid, moment word-highlight in #mission, palette the client's own.
-     Type is IBM Plex Sans Arabic in place of Red Hat: the kit's type.json carries no Arabic face.
-     Copy is translated from profile v2 using the terminology of the client's own Arabic profile
-     (Aldur-Almanthour-Company-Profile-AR.pdf). -->
 
 <header class="nav nav--centre">
   <div class="wrap nav__bar">

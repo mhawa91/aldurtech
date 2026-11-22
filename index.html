@@ -43,8 +43,6 @@
   --display-tracking: -0.025em;
   --display-tracking-xl: -0.035em;
 }
-/* The evening grade. The skill keeps dark pages to tech; built here because the brief asks for
-   light and dark. Same brand hues, lifted so the teal clears 3:1 on the dark ground. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --p-bg: #1b2426; --p-surface: #243032; --p-ink: #f1ece3; --p-muted: #a9a79f;
@@ -66,24 +64,15 @@
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
 <link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
-<!-- the grade is read before the first paint so the page never flashes the wrong one -->
 <script>try{var t=localStorage.getItem('aldur-theme');if(t){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
 <style>
-  /* six cards fit one screen at 1440, need two on the tablet and the phone */
   @media (min-width: 640px) and (max-width: 1023px) { #services { --h: 2; } }
-  /* system.css sets .nav__logo img to 24px; the Aldur wordmark carries its name line inside the
-     artwork, so it needs more height to stay legible */
   .nav__logo .brand-logo { height: 42px; width: auto; display: block; }
   .footer .nav__logo .brand-logo { height: 52px; }
   @media (max-width: 639px) { .nav__logo .brand-logo { height: 32px; } }
-  /* the tools the firm really works with, named in the profile */
-  /* the partners' own logos, from the company profile; a light tile so marks drawn in black
-     (Korrasat, Classbase) and marks with their own dark ground (Lockfy) both read on the dark band */
   .icon-rows > li { grid-template-columns: 24px minmax(0, 1fr) auto; column-gap: var(--s-3); align-items: start; }
   .icon-rows .rows__name { grid-column: 2; }
   .icon-rows > li > p { grid-column: 2; }
-  /* one equal cell per product: logo tile, name, line — no gap between a logo and its own words */
-  /* at 390 the wrap is 342: two 165 tiles exactly 12 apart, so each column lands on a grid line */
   .partner-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6) var(--s-3); }
   @media (min-width: 640px) { .partner-grid { column-gap: var(--s-5); } }
   @media (min-width: 768px) { .partner-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -94,12 +83,6 @@
   #partners .partner-logo img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
   @media (max-width: 639px) { #partners .partner-logo { height: 64px; } }
   .tool-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-6); margin-bottom: var(--s-7); }
-  /* MOBILE RHYTHM — a deliberate deviation from the kit.
-     Under 640 the kit pins every section to a full screen (100lvh). With short sections
-     (the mission statement is 264px of content in an 844px box) that leaves half a screen
-     of dead space and the page reads as gappy. On a phone nobody is judging one-section-
-     per-screen tiles, so sections size to their content and the 96/48 padding carries the
-     rhythm instead. The hero keeps its full screen. */
   @media (max-width: 639px) {
     main > :is(section, .section):not(.hero, .section--hero), footer.closing {
       height: auto; min-height: 0;
@@ -141,19 +124,6 @@
 </script>
 </head>
 <body>
-<!-- type: service
-     deal: hero statement (re-dealt: photo/split/film each need a photograph the client has none of),
-           nav nav-centre, close close-type, footer footer-dark (re-dealt: footer-visit needs a street
-           and hours the brief does not give), rhythm dark-band, buttons solid,
-           mark arc -> not used (the client's own logo replaces it), grounds none (kind other)
-     palette: the client's own, via start.mjs brand (teal #0b5f6b on cream #f6f2eb)
-     type: red-hat (second pairing: the first, newsreader, is a serif and clashes with the
-           client's geometric-sans wordmark)
-     moments: word-highlight in #mission (re-dealt: pinned-chapters needs a picture per step)
-     photographs: none exist and photos.mjs found none for this subject; the page is type-led with
-           the real marks of the tools the firm works with and category glyphs on the partner
-           cards. The five no-visual findings are waived for that reason and the report lists the
-           photographs the client should shoot to lift them. -->
 
 <header class="nav nav--centre">
   <div class="wrap nav__bar">
